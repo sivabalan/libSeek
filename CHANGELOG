@@ -1,0 +1,11 @@
+#############################
+libseek - v0.2
+
+* Added web files
+* TODO:
+  - Check snippet related code
+  - Are we returning ndcg values this time?
+
+-- Sivabalan Thirunavukkarasu - May 8, 2014 - 14:40
+
+#############################

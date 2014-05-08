@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)http://getbootstrap.com/examples/jumbotron/ -->
+<html lang="en">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+   
+
+    <title>libSeek</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+
+    <script src="js/logic.js"></script>
+    <script src="js/config.js"></script>
+
+    
+  <style type="text/css"></style>
+  </head>
+
+  <body onload=init()>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand">libSeek</a>
+          <div class='search-option'>
+            <vr></vr>
+            <label>Target OS :&nbsp;</label>
+            <select id="targetOSSelect">
+              <option value='all'>All</option>
+              <option value='Windows'>Windows</option>
+              <option value='Linux'>Linux</option>
+              <option value='Android'>Android</option>
+            </select>
+            <vr></vr>
+            <label>Language :&nbsp;</label>
+            <select id="languageSelect">
+              <option value='all'>All</option>
+              <option value='python'>Python</option>
+              <option value='java'>Java</option>
+            </select>
+          </div>
+          <div class='search-option'>
+            <img src="images/ajax-loader.gif"/>
+          </div> 
+        </div>
+        
+        <div class="navbar-collapse collapse">
+           <div class="custom-search input-group">
+              <input id="searchText" type="text" class="form-control" autocomplete="off"></input>
+              <span class="input-group-btn">
+                <button id="searchButton" class="btn btn-success search-button" type="button">Search</button>
+              </span>
+              
+            </div>
+            <div id="autoSuggestDiv"></div>
+          <form class="navbar-form navbar-right" role="form">
+            
+           
+            
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </div>
+    <hr>
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+          <div id='searchResults' class="col-md-9"><h2>Your software libraries search results will appear here!</h2></div>
+          <div id='searchMetrics' class="col-md-3"></div>      
+      </div>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery-2.1.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <span id='asSizeCheck'></span>
+
+</body></html>

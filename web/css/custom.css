@@ -1,0 +1,155 @@
+.custom-search {
+	margin-top: 0px;
+}
+
+h2 {
+	color: #A8A8A8;
+}
+
+body {
+	background-image: url("../images/bg1.png");
+}
+
+hr {
+	margin: 0px;
+}
+
+vr {
+    height: 30px;
+	background-color: #ACACAC;
+	width: 1px;
+	float: left;
+	position: relative;
+	margin: 0px 30px 0px 30px;
+}
+
+.search-option {
+	float: left;
+}
+
+.search-option label {
+	color: #A8A8A8;
+	float: left;
+	margin-top: 4px;
+}
+
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}
+
+.search-option select {
+	background-color: #ccc;
+	padding: 5px;
+	padding-right: 5px;
+	outline: 0;
+	border: none;
+	outline-style: none;
+	float: left;
+}
+
+.search-option img {
+	margin-top: 5px;
+	margin-left: 30px;
+	display: none;
+}
+
+.navbar {
+	position: relative;
+	width: 100%;
+	background-color: transparent;
+	border-color: transparent;	
+	background-image: url("../images/nav-bg.png");
+	margin-bottom: 0px;
+	padding-bottom: 15px;
+}
+
+.navbar .container {
+	margin-top: 20px;
+}
+
+.navbar .container .navbar-header {
+	margin-bottom: 15px;
+}
+
+.navbar .container .navbar-header .navbar-brand {
+	padding: 5px 5px 5px 0px;
+	font-size: 28px;
+	color: #2EBB2E;
+	margin: 0px;
+	height: auto;
+}
+
+.navbar-collapse {
+	float: left;
+	clear: left;
+	width: 100%;
+}
+
+.search-button {
+	width: 150px;
+	font-weight: bold;
+}
+
+#autoSuggestDiv {
+	width: auto;
+	height: auto;
+	background-color: #fff;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 50;
+	box-shadow: 2px 2px 2px #000;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.results-header {
+	color: #666;
+	margin-bottom: 10px;
+}
+
+.container .row {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+#searchResults {
+	padding: 0;
+}
+
+#searchResults label {
+	font-size: 1.2em;
+	margin: 10px 0 0 0;
+}
+
+#searchMetrics {
+	padding-right: 0px;
+}
+
+#searchMetrics h3, #searchMetrics h4 {
+	margin: 0;
+	font-weight: bold;
+}
+
+#searchMetrics div {
+	padding: 20px;
+	margin-left: 20px;
+	background-color: #cdcdcd;
+	margin-top: 20px;
+	border-radius: 20px;
+}
+
+.result-title {
+	width: 70%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.result-snippet {
+	font-size: 0.9em;
+	margin-bottom: 5px;
+	margin-top: -5px;
+	width: 80%;
+}
