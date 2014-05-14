@@ -1,10 +1,12 @@
 import json
 import math
 import re
+import os
 from collections import OrderedDict
 
 repoDir = "repoData/"
 wordFreqFileName = "/wordFrequencies.pfq"
+indexDir = "indexData/"
 
 indexDict = {}
 
@@ -47,7 +49,7 @@ allProjFile.close()
 count = 0
 for i in range(0,len(allProjDict)):
 	folderName = allProjDict[i]["full_name"].replace("/", "-")
-	if(os.path.isfile(repoDir+folderName+wordFreqFileName):
+	if(os.path.isfile(repoDir+folderName+wordFreqFileName)):
 		mergeIndicesToDict(repoDir+folderName+wordFreqFileName,folderName)
 	else:
 		print("No PFQ : "+str(i)+ " : "+folderName)
@@ -78,7 +80,7 @@ for alpha in charChunkedDict:
 	else:
 		indexFileSuffix = 'special'
 	print(alpha)
-	json.dump(charChunkedDict[alpha], open(INDEX_FOLDER+'indexDump-'+indexFileSuffix+'.json','w'))
+	json.dump(charChunkedDict[alpha], open(indexDir+'indexDump-'+indexFileSuffix+'.json','w'))
 
 
 #json.dump(indexDict, open('indexDump.json','w'))

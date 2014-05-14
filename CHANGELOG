@@ -1,4 +1,11 @@
 #############################
+libseek - v0.4
+
+* Added index builder
+
+-- Sivabalan Thirunavukkarasu - May 14, 2014 - 02:38
+
+#############################
 libseek - v0.3
 
 * Added pfq generator from description text
