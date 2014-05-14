@@ -4,7 +4,7 @@ import base64
 import nltk
 import re
 
-allProjFile = open("../bucket2.json")
+allProjFile = open("projects_meta_data.json")
 allProjDict = json.load(allProjFile)
 allProjFile.close()
 
@@ -20,7 +20,6 @@ for item in stopslist:
 wnl = nltk.WordNetLemmatizer()
 
 for i in range(0,len(allProjDict)):
-#for i in range(len(allProjDict) - 1,len(allProjDict)):
 	folderName = allProjDict[i]["full_name"].replace("/", "-")
 	tokenString = ""
 	if(os.path.isfile(repoDir+folderName+descFileName) and os.path.isfile(repoDir+folderName+pyContentFileName)):

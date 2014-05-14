@@ -12,7 +12,7 @@ function init() {
 			asQueryObj = getWordAtPosition(searchQuery,e.target.selectionStart);
 
 		$asObj.hide();
-		resetResults('Press Enter or click Search to find pages from within ICS!');
+		resetResults('Your software libraries search results will appear here!');
 
 		if (e.target.value.slice(-1) != ' ' && $.trim(e.target.value) != '' && $.trim($asObj.text()) != asQueryObj.word)
 		{	
