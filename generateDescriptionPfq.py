@@ -4,7 +4,11 @@ import base64, binascii
 import nltk
 import re
 
+<<<<<<< HEAD
 allProjFile = open("../projects_meta_data.json")
+=======
+allProjFile = open("projects_meta_data.json")
+>>>>>>> 84e0fa98905512848fe15a25965fc3ac125374f9
 allProjDict = json.load(allProjFile)
 allProjFile.close()
 
@@ -21,6 +25,7 @@ wnl = nltk.WordNetLemmatizer()
 
 badrepos = {"bad_repo" : [], "decode_dontknow" : []}
 for i in range(0,len(allProjDict)):
+<<<<<<< HEAD
 #for i in range(len(allProjDict) - 1,len(allProjDict)):
     folderName = allProjDict[i]["full_name"].replace("/", "-")
     tokenString = ""
@@ -28,6 +33,14 @@ for i in range(0,len(allProjDict)):
         if allProjDict[i]["description"]:      
             tokenString = allProjDict[i]["description"]
             descString = allProjDict[i]["description"].lower()
+=======
+	folderName = allProjDict[i]["full_name"].replace("/", "-")
+	tokenString = ""
+	if(os.path.isfile(repoDir+folderName+descFileName) and os.path.isfile(repoDir+folderName+pyContentFileName)):
+		tokenString = allProjDict[i]["description"]
+		descString = allProjDict[i]["description"].lower()
+		print(str(i) + " : " + folderName)
+>>>>>>> 84e0fa98905512848fe15a25965fc3ac125374f9
 
         print(str(i) + " : " + folderName)
 

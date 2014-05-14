@@ -34,8 +34,9 @@ def getlibs(pycontent):
                     modulepath = matches.groups()[1].strip()
         if modulepath:
             libparts = modulepath.split(",")
+            libparts = [part.split("as")[0].strip() for part in libparts]
             for part in libparts:
-                libs.add(part.split(".")[-1] if part.split(".")[-1] != "*" else "")
+                libs.add(part.split(".")[-1].strip() if part.split(".")[-1].strip() != "*" else "")
     return libs
 
 
