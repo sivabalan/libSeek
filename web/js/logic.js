@@ -164,9 +164,8 @@ function resetResults(msg) {
 
 function sendSearchRequest() {
 	var queryText = $("#searchText").val(),
-		searchResults = [],
-		ndcgValues = [];
-
+		searchResults = [];
+		
 	$('#autoSuggestDiv').hide();
 	
 	if($.trim(queryText) == '')
@@ -185,8 +184,7 @@ function sendSearchRequest() {
 			$('.search-option img').hide();
 			if(data){
 			    try{
-			        searchResults = data["results"];
-			        ndcgValues = data["ndcg_values"];	        
+			        searchResults = data["results"];	        
 			    }
 			    catch(e){
 			        alert(e); 
@@ -213,24 +211,19 @@ function sendSearchRequest() {
 
 			for(var i = 0; i < searchResults.length; i++) {
 				
-				url = searchResults[i]['url'];
-				urlTitle =  searchResults[i]['title'].length == 0 ? url.replace('http://','') : searchResults[i]['title'];
+				url = "https://www.google.com/#q="+searchResults[i]['lib_name'];
+				urlTitle = searchResults[i]['lib_name'];
 				
 				var resultRow = $('<div/>').append(
 											$('<label/>')
 												.append($('<a/>').html(urlTitle).attr('href',url).addClass(''))
 												.addClass('result-title')
 								),
-					snippetText = '',
+					snippetText = 'Used in ',
 					snippetRow = $('<p/>').addClass('result-snippet');
 
-				if(searchResults[i]["snippet"].length > 0)
-				{
-					for(var j=0; j < searchResults[i]["snippet"].length; j++)
-					{
-						snippetText += searchResults[i]["snippet"][j] + '...';
-					}
-					snippetText = snippetText.slice(0,250)+'...';
+					snippetText += searchResults[i]["repo_count"];
+					snippetText += ' repositories'
 					snippetRow.html(snippetText);
 
 					resultRow.append(snippetRow)
@@ -242,18 +235,12 @@ function sendSearchRequest() {
 
 			var execTime = (endTime - startTime)/1000,
 				execTimeHTML = "<h4>Retrieval time : "+execTime.toString()+' s</h4>',
-				ndcgHTML = '',
 				headerHTML = '<h3>Search Metrics</h3><br>';
-
-			if(ndcgValues.length > 0)
-			{
-				ndcgHTML = "<h4>NDCG @ 10 : "+ndcgValues[ndcgValues.length-1]+"</h4>";
-			}
 
 			metricsContainer = $('#searchMetrics');
 			metricsContainer.empty();
-			$metricRow = $('<div/>').html(headerHTML+execTimeHTML+ndcgHTML);
-			metricsContainer.append($metricRow);
+			$metricRow = $('<div/>').html(headerHTML+execTimeHTML);
+			metricsContainer.append($metricRow);s
 
 			$('#searchText').blur();
 		}
